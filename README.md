@@ -1,8 +1,12 @@
 # MongoDB Installation and Basic CRUD Operations
+![image](https://github.com/user-attachments/assets/32e13dfd-57f1-4218-9256-936111249c30)
 
 ## Introduction to MongoDB
 
 MongoDB is a popular NoSQL database that provides high performance, high availability, and easy scalability. It stores data in flexible, JSON-like documents, which means fields can vary from document to document, and data structure can be changed over time.
+
+![image](https://github.com/user-attachments/assets/a7bee475-4226-49a9-b694-092991017448)
+
 
 ### Key Features:
 - Schema-less database (NoSQL)
