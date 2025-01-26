@@ -1,20 +1,24 @@
 # MongoDB Installation and Basic CRUD Operations
+
 ![image](https://github.com/user-attachments/assets/32e13dfd-57f1-4218-9256-936111249c30)
 
 ## Introduction to MongoDB
 
 MongoDB is a popular NoSQL database that provides high performance, high availability, and easy scalability. It stores data in flexible, JSON-like documents, which means fields can vary from document to document, and data structure can be changed over time.
 
-![image](https://github.com/user-attachments/assets/a7bee475-4226-49a9-b694-092991017448)
+![image](https://github.com/user-attachments/assets/68e6a01c-f362-4ff5-8e02-a08d989f8cac)
 
+Let’s see how RDBMS and MongoDB differ:
+
+![image](https://github.com/user-attachments/assets/5f561646-c0a0-4940-a061-09b5e2dc48a4)
 
 ### Key Features:
-- Schema-less database (NoSQL)
-- Document-oriented
-- High availability through replication
-- Horizontal scalability with sharding
-- Indexing for better query performance
-- Support for aggregation and rich queries
+- 🗄️ Schema-less database (NoSQL)
+- 📄 Document-oriented
+- 🔄 High availability through replication
+- 📊 Horizontal scalability with sharding
+- ⚡ Indexing for better query performance
+- 🛠️ Support for aggregation and rich queries
 
 ---
 
@@ -50,6 +54,8 @@ MongoDB is a popular NoSQL database that provides high performance, high availab
 ## Basic CRUD Operations
 
 CRUD stands for Create, Read, Update, and Delete. These are the basic operations you can perform in MongoDB.
+
+![image](https://github.com/user-attachments/assets/3f5cf922-a9b2-4ed9-b0e0-a60eacd708fe)
 
 ### 1. Create (Insert)
 To insert documents into a collection, use the `insertOne()` or `insertMany()` methods.
@@ -116,6 +122,25 @@ db.users.deleteMany({ age: { $gte: 30 } });
 
 ---
 
+## Basic Aggregation Example
+
+Aggregation is used to process data and return computed results. It allows for operations like filtering, grouping, and sorting.
+
+```javascript
+// Group by age and count the number of users in each group
+db.users.aggregate([
+  { $group: { _id: "$age", count: { $sum: 1 } } },
+  { $sort: { _id: 1 } }
+]);
+
+// Find the average age of users
+db.users.aggregate([
+  { $group: { _id: null, avgAge: { $avg: "$age" } } }
+]);
+```
+
+---
+
 ## Additional Commands
 
 ### List Databases
@@ -136,5 +161,12 @@ show collections;
 ---
 
 ## Conclusion
-MongoDB is a flexible and powerful database solution suitable for various applications. Understanding and mastering basic CRUD operations is the first step to utilizing its full potential.
+MongoDB is a flexible and powerful database solution suitable for various applications. Understanding and mastering basic CRUD operations is the first step to utilizing its full potential. Aggregation allows for advanced data analysis, making MongoDB a versatile tool for developers.
+
+---
+
+## References
+- [Introduction to MongoDB on CodeProject](https://www.codeproject.com/Articles/1037052/Introduction-to-MongoDB)
+- [MongoDB CRUD Operations](https://www.mongodb.com/docs/manual/crud/)
+- [MongoDB Aggregation Framework](https://www.mongodb.com/docs/manual/aggregation/)
 
