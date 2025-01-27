@@ -158,13 +158,27 @@ db.students.aggregate([
 ```
 
 ### **Example 3: Sorting**
-Sort students by age in descending order:
+Sort students by age in **descending order**:
 ```javascript
 db.students.aggregate([
   { $sort: { age: -1 } }
 ]);
 ```
+To sort students by age in **ascending order**, use the `$sort` stage in the aggregation pipeline with `age: 1` (where `1` indicates ascending order):
 
+```javascript
+db.students.aggregate([
+  { $sort: { age: 1 } }
+]);
+```
+
+This will return the list of students sorted from the youngest to the oldest. If you are not using aggregation, you can achieve the same with a simple `find()` and `sort()`:
+
+```javascript
+db.students.find().sort({ age: 1 });
+``` 
+
+Both methods will work, so you can choose based on your needs! 😊
 ---
 
 ## Useful Commands
