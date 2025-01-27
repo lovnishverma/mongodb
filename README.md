@@ -97,6 +97,7 @@ db.users.updateOne(
 );
 
 // Update multiple documents
+// Update all documents with Status young where Age is less than 30
 db.users.updateMany(
   { age: { $lt: 30 } },
   { $set: { status: "young" } }
@@ -157,7 +158,51 @@ use myDatabase;
 ```javascript
 show collections;
 ```
+In MongoDB, you can delete documents using the `deleteOne` or `deleteMany` methods. Here's how to use them:
 
+---
+
+### **Delete a Single Document (`deleteOne`)**
+Deletes the first document that matches the filter.
+
+```javascript
+db.employees.deleteOne({ "Name": "Lucky" });
+```
+
+- **Filter**: `{ "Name": "Lucky" }` deletes the first document where `Name` is "Lucky".
+
+---
+
+### **Delete Multiple Documents (`deleteMany`)**
+Deletes all documents that match the filter.
+
+```javascript
+db.employees.deleteMany({ "Role": "Scientist" });
+```
+
+- **Filter**: `{ "Role": "Scientist" }` deletes all documents where `Role` is "Scientist".
+
+---
+
+### **Delete All Documents**
+To delete all documents in a collection (**be cautious with this**):
+
+```javascript
+db.employees.deleteMany({});
+```
+
+- An empty filter `{}` matches all documents in the collection.
+
+---
+
+### **Drop the Collection**
+If you want to completely remove a collection and its documents:
+
+```javascript
+db.employees.drop();
+```
+
+- This deletes the entire collection, not just the documents.
 ---
 
 ## Conclusion
