@@ -59,7 +59,7 @@ Let’s see how RDBMS and MongoDB differ:
 
 ## Basic CRUD Operations in MongoDB
 
-CRUD stands for **Create**, **Read**, **Update**, and **Delete**. Let’s use a collection named `students` with Indian names as examples.
+CRUD stands for **Create**, **Read**, **Update**, and **Delete**. Let’s use a collection named `students` .
 
 ![image](https://github.com/user-attachments/assets/3f5cf922-a9b2-4ed9-b0e0-a60eacd708fe)
 
