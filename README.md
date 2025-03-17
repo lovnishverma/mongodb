@@ -208,3 +208,15 @@ db.students.drop();
 ## Summary
 
 MongoDB’s flexibility and simplicity make it a great choice for beginners and professionals alike. Start by mastering basic CRUD operations, then explore the powerful Aggregation Framework for advanced queries.😊
+
+## References: 
+
+https://www.infoq.com/articles/Starting-With-MongoDB/
+
+https://www.w3schools.com/mongodb/
+
+https://www.geeksforgeeks.org/mongodb-tutorial/
+
+https://www.mongodb.com/resources/products/fundamentals/basics
+
+https://www.tutorialspoint.com/mongodb/index.htm
